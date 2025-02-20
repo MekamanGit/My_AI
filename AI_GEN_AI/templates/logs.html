@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation Logs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .log-entry {
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .timestamp {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .user-text {
+            color: #007AFF;
+            margin: 10px 0;
+        }
+        .ai-text {
+            color: #28a745;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Conversation Logs</h1>
+            <a href="/" class="primary-btn">Back to Chat</a>
+        </div>
+        <div class="logs-container">
+            {% for log in logs|reverse %}
+            <div class="log-entry">
+                <div class="timestamp">{{ log.timestamp }}</div>
+                <div class="user-text">
+                    <strong>User:</strong> {{ log.user_message }}
+                </div>
+                <div class="ai-text">
+                    <strong>AI:</strong> {{ log.ai_response }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html> 

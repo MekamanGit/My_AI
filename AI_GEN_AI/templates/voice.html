@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/voice.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="galaxy-bg">
+        <div class="stars"></div>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="ai-profile">
+                <div class="profile-image">
+                    <!-- Circular glowing border around the AI face -->
+                    <div class="glow-border"></div>
+                    <!-- AI face container -->
+                    <div class="sound-glow"></div>
+                    <div class="ai-face">
+                        <img src="{{ url_for('static', filename='images/batman.jpeg') }}" 
+                             alt="Batman"
+                             onerror="console.error('Failed to load image:', this.src);"
+                             onload="console.log('Image loaded successfully:', this.src);">
+                        <!-- Add debug info -->
+                        <div style="display:none;">
+                            Image path: {{ url_for('static', filename='images/batman.jpeg') }}
+                        </div>
+                    </div>
+                </div>
+                <h1 class="ai-name">Batman</h1>
+                <div class="status">Idle</div>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" class="talk-btn">
+                    <i class="fas fa-microphone"></i>
+                    <span>Hold to Talk</span>
+                </button>
+            </div>
+        </div>
+        <div class="floating-messages" id="messages"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/voice.js') }}"></script>
+</body>
+</html> 

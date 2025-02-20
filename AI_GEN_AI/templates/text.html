@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/text.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <div class="chat-container">
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <h1>AI Text Chat</h1>
+                </div>
+                <div class="controls-top">
+                    <a href="/voice" class="icon-btn" title="Switch to Voice Mode">
+                        <i class="fas fa-microphone"></i>
+                    </a>
+                    <a href="/view_logs" class="icon-btn" title="View Logs">
+                        <i class="fas fa-history"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="messages" id="messages">
+                <div class="welcome-message">
+                    <h2>Welcome to AI Text Chat</h2>
+                    <p>Type your message below to start chatting</p>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button id="sendBtn" class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/text.js') }}"></script>
+</body>
+</html> 
